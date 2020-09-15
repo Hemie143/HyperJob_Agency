@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from hyperjob.views import MainPageView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', MainPageView.as_view())
 ]
+
+
+'''
+1. Make a "templates" directory (store future HTML files) in hyperjob
+2. In templates make an HTML file with the required info
+3. Create a views.py file in hyperjob
+4. Add the path in the urls.py file
+'''
