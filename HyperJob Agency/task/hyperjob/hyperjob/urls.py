@@ -18,10 +18,12 @@ from django.urls import path
 
 from hyperjob.views import MainPageView
 from vacancy.views import VacanciesView
+from resume.views import ResumesView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vacancies/', VacanciesView.as_view()),
+    path('resumes/', ResumesView.as_view()),
     path('', MainPageView.as_view()),
 ]
 
