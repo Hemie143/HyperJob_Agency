@@ -17,18 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
 
-from hyperjob.views import MainPageView, MyLoginView, MySignupView
-from vacancy.views import VacanciesView
-from resume.views import ResumesView
+from hyperjob.views import MainPageView, MyLoginView, MySignupView, HomeView
+from vacancy.views import VacanciesView, VacancyNewView
+from resume.views import ResumesView, ResumeNewView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vacancies/', VacanciesView.as_view()),
+    path('vacancy/new', VacancyNewView.as_view()),
     path('resumes/', ResumesView.as_view()),
+    path('resume/new', ResumeNewView.as_view()),
     path('login', MyLoginView.as_view()),
     path('login/', RedirectView.as_view(url='/login')),
     path('signup', MySignupView.as_view()),
     path('signup/', RedirectView.as_view(url='/signup')),
+    path('home', HomeView.as_view()),
     path('', MainPageView.as_view()),
 ]
 
